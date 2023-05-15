@@ -1,4 +1,5 @@
 import env from "../../../config/environment";
+import fakeData from "../../../utils/fakeData";
 
 export async function getPlanets() {
     try {
@@ -12,6 +13,7 @@ export async function getPlanets() {
         }
     } catch (e) {
         console.error("Error on get planets info:", e);
+        return fakeData()
     }
 
 

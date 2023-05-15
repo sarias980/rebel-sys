@@ -1,0 +1,15 @@
+.header{
+    width: 100%;
+    height: 60px;
+
+    border-radius: 0 0 5px 5px;
+    background-color: #E97777;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.header .title{
+    margin: 0;
+    padding-left: 15px;
+}

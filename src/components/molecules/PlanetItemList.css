@@ -1,0 +1,5 @@
+.planet-item{
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
+}
