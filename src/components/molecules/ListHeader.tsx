@@ -1,7 +1,7 @@
 import React from "react";
 import SearchHeaderList from "./SearchHeaderList";
 
-import './PlanetListHeader.css'
+import './ListHeader.css'
 
 interface HeaderProps {
     title: string;
@@ -9,13 +9,13 @@ interface HeaderProps {
     setSearchTerm: Function;
 }
 
-const PlanetListHeader: React.FC<HeaderProps> = ({title: string,searchTerm,setSearchTerm }) => {
+const ListHeader: React.FC<HeaderProps> = ({title,searchTerm,setSearchTerm }) => {
   return(
       <div className={'header-section'}>
-          <h2>Planets</h2>
+          <h2>{title}</h2>
           <SearchHeaderList searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       </div>
   )
 }
 
-export default PlanetListHeader;
+export default ListHeader;

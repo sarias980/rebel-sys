@@ -2,6 +2,15 @@
     background-color: #F4F4F4;
     min-height: 100%;
 }
+.page-container{
+    width: 95%;
+    margin: auto;
+}
+.item-container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .item-card {
     display: flex;
@@ -12,9 +21,6 @@
     min-width: 560px;
     padding: 0;
     margin: 15px auto;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .item-card img {

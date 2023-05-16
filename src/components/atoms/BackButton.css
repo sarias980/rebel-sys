@@ -1,0 +1,17 @@
+.back-button {
+    background: transparent;
+    border: 0;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 6px;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.8px;
+    transition: 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    color: #E97777;
+}

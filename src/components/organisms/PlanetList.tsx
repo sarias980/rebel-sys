@@ -1,6 +1,6 @@
 import PlanetItemList from "../molecules/PlanetItemList";
 import {Planet} from "../../models/planet";
-import PlanetListHeader from "../molecules/PlanetListHeader";
+import ListHeader from "../molecules/ListHeader";
 import {useState} from "react";
 import {filterPlanets} from "../../utils/filterPlanets";
 
@@ -12,7 +12,7 @@ const PlanetList = (props: { planets: Planet[] }) => {
 
     return (
         <section>
-            <PlanetListHeader title={'Planets'} setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
+            <ListHeader title={'Planets'} setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
             {filteredCompanies?.map(planet =>
                 <PlanetItemList key={planet.name} planet={planet}/>
             )}

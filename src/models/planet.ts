@@ -1,3 +1,5 @@
+import {generateUniqueId} from "../utils/idGenarator";
+
 export class Planet {
     constructor(
         name: string,
@@ -15,6 +17,7 @@ export class Planet {
         created: Date,
         edited: Date
     ) {
+        this.id = generateUniqueId()
         this.name = name;
         this.climate = climate;
         this.diameter = diameter;
@@ -31,6 +34,7 @@ export class Planet {
         this.edited = edited;
     }
 
+    public id:string;
     public name: string;
     public climate: string;
     public diameter: string;

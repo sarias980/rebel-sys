@@ -1,0 +1,9 @@
+.planet-header{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: auto;
+}
+.planet-header h2 {
+    padding-left: 15px;
+}

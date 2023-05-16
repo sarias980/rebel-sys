@@ -1,6 +1,6 @@
 import {Planet} from "../../models/planet";
 import {useNavigate} from "react-router-dom";
-import PlanetImg from '../../assets/planet.png'
+import PlanetImg from '../../assets/planet.png';
 import './PlanetItemList.css'
 
 const PlanetItemList = (props: { planet: Planet }) => {
@@ -10,13 +10,13 @@ const PlanetItemList = (props: { planet: Planet }) => {
 
     const navToProductsAds = () => {
         if (planet) {
-            navigate(`/planet/${encodeURIComponent(planet.name)}`);
+            navigate(`/planet/${encodeURIComponent(planet.id)}`);
         }
     };
 
     return (
-        <div className={'item-card'} onClick={() => navToProductsAds()}>
-            <img src={planetImg}/>
+        <div className={'item-card item-container'} onClick={() => navToProductsAds()}>
+            <img src={planetImg} alt={planet.name}/>
             <div className="card-info">
                 <h3>{planet.name}</h3>
                 <div className="card-info-detail">

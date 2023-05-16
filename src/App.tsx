@@ -6,6 +6,7 @@ import {setPlanets} from "./redux/actions/planets/types";
 import Navigation from "./navigation/navigation";
 import './styles/style.css'
 import Header from "./components/organisms/Header";
+import {addIdOnDataResponse} from "./utils/idGenarator";
 
 function App() {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function App() {
     useEffect(() => {
         getPlanets().then((data) => {
             if (data) {
-                dispatch(setPlanets(data.results));
+                dispatch(setPlanets(addIdOnDataResponse(data.results)));
             }
         })
     }, [dispatch]);
