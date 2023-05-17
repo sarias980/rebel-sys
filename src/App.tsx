@@ -7,6 +7,8 @@ import Navigation from "./navigation/navigation";
 import './styles/style.css'
 import Header from "./components/organisms/Header";
 import {addIdOnDataResponse} from "./utils/idGenarator";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     const dispatch = useDispatch();
@@ -23,6 +25,7 @@ function App() {
         <div className="App page">
             <Header/>
             <Navigation/>
+            <ToastContainer />
         </div>
     );
 }

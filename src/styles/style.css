@@ -42,7 +42,9 @@
 .card-info {
     display: flex;
     flex-direction: column;
-    width: auto;
+    flex-wrap: wrap;
+    width: calc(100% - 280px);
+    min-width: 500px;
     margin: 10px;
     cursor: pointer;
     padding-bottom: 10px;
@@ -87,4 +89,9 @@
     font-weight: bold;
     text-align: left;
     color: #30444F;
+}
+.card-buttons{
+    width: 65px;
+    margin: auto;
+    padding-top: 10px;
 }

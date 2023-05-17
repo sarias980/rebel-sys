@@ -1,0 +1,44 @@
+
+.item-button {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.item-button-s button {
+    width: 100px !important;
+}
+.item-button-m button{
+    width: 150px !important;
+}
+.item-button-l button{
+    width: 350px !important;
+}
+.item-button-primary button{
+    background-color: #30444F;
+    color: #fff;
+}
+.item-button-danger button{
+    background-color: #e74c3c;
+    color: #fff;
+}
+.item-button-success button{
+    background-color: green;
+    color: #fff;
+}
+
+.item-button button {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    margin: 8px;
+    padding: 12px 21px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    transition: 0.3s ease-in-out;
+}
+
+.item-button button:hover {
+    background-color: #e74c3c;
+    color: white;
+}
