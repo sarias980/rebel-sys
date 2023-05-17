@@ -1,20 +1,40 @@
 import PlanetItemList from "../molecules/PlanetItemList";
 import {Planet} from "../../models/planet";
 import ListHeader from "../molecules/ListHeader";
-import {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {filterPlanets} from "../../utils/filterPlanets";
 import DataPlanetModal from "../molecules/DataPlanetModal";
 import {addPlanet} from "../../redux/actions/planets/types";
 import {toast} from "react-toastify";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import PaginationFooter from "../molecules/PaginationFooter";
+import SortByPlanets from "../molecules/SortByPlanets";
+import {sortPlanetsBy} from "../../redux/actions/planets/service";
 
-const PlanetList = (props: { planets: Planet[] }) => {
+const PlanetList = () => {
     const dispatch = useDispatch();
-    const [searchTerm, setSearchTerm] = useState("");
+    const planets = useSelector((state: any) => state.planets);
+    const [searchTerm, setSearchTerm] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const planets = props.planets;
+    const [page, setPage] = useState(1);
+    const [sort, setSort] = useState('name');
+    const [paginatePlanet, setPaginatePlanet] = useState<Planet[]>([]);
+    const [filteredPlanets, setFilteredPlanets] = useState<Planet[]>([]);
 
-    const filteredCompanies = filterPlanets(planets, searchTerm);
+    const pageSize = 3;
+    const indexOfLastPost = page * pageSize;
+    const indexOfFirstPost = indexOfLastPost - pageSize;
+
+
+    useEffect(() => {
+        if (planets && planets.length > 0) {
+            const sortList = sortPlanetsBy(sort, planets);
+            const filterList = filterPlanets(sortList, searchTerm)
+            setFilteredPlanets(filterList);
+            const paginateList = filterList.slice(indexOfFirstPost, indexOfLastPost);
+            setPaginatePlanet(paginateList);
+        }
+    }, [planets, page, searchTerm, sort]);
 
     const handleConfirm = (planet: Planet) => {
         if (planet) {
@@ -28,13 +48,40 @@ const PlanetList = (props: { planets: Planet[] }) => {
         setShowModal(false);
     };
 
+    const handleChangeSearch = (e: string) => {
+        if (e.length > 0) {
+            setPage(1);
+        }
+        setSearchTerm(e);
+    }
+
+    const render = () => {
+        if (!paginatePlanet || paginatePlanet?.length === 0) {
+            return <h2 style={{textAlign: 'center'}}> No data...</h2>
+        }
+
+        return (
+            <div>
+                {paginatePlanet?.map((planet: Planet) =>
+                    <PlanetItemList key={planet.name} planet={planet}/>
+                )}
+                <PaginationFooter
+                    page={page}
+                    pageSize={pageSize}
+                    data={filteredPlanets.length}
+                    setPage={setPage}
+                />
+            </div>
+        )
+    }
+
     return (
         <section>
-            <ListHeader title={'Planets'} setSearchTerm={setSearchTerm} searchTerm={searchTerm} count={planets.length}
+            <ListHeader title={'Planets'} setSearchTerm={handleChangeSearch} searchTerm={searchTerm}
+                        count={planets.length}
                         setShowModal={setShowModal}/>
-            {filteredCompanies?.map(planet =>
-                <PlanetItemList key={planet.name} planet={planet}/>
-            )}
+            <SortByPlanets sort={sort} setSort={setSort}/>
+            {render()}
             {showModal && (
                 <DataPlanetModal message={'Create Planet'} confirm={handleConfirm} cancel={handleCancel}/>
             )}

@@ -1,4 +1,9 @@
-import {ADD_PLANET, DELETE_PLANET, SET_PLANETS, UPDATE_PLANET} from "../actions/planets/types";
+import {
+    ADD_PLANET,
+    DELETE_PLANET,
+    SET_PLANETS,
+    UPDATE_PLANET
+} from "../actions/planets/types";
 import {Planet} from "../../models/planet";
 
 const initialState = {

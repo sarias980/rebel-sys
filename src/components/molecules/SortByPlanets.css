@@ -1,0 +1,30 @@
+.order-container{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: auto;
+    justify-content: end;
+}
+.order-container h5{
+    margin-right: 10px;
+}
+.item-input {
+    padding: 10px 10px 5px;
+    max-width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-input select {
+    width: 250px;
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    margin: 0 0 8px 0;
+    padding: 12px 16px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    transition: 0.3s ease-in-out;
+}
+

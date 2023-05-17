@@ -8,9 +8,8 @@ import PlanetInfo from "../../components/organisms/PlanetInfo";
 
 const PlanetsDetailPage: React.FC = () => {
     const { id } = useParams();
-    const planet = useSelector((state: any) => state.planets?.find((planet:Planet) => planet.id === id));
 
-    console.log(planet);
+    const planet = useSelector((state: any) => state.planets?.find((planet:Planet) => planet.id === id));
 
     return(
         <div>

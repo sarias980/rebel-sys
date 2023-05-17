@@ -6,9 +6,10 @@ interface ItemButtonProps {
     size?: 'small' | 'medium' | 'big';
     color?: 'primary' | 'danger' | 'success';
     onClick: Function;
+    disable?: boolean
 }
 
-const ItemButton : React.FC<ItemButtonProps> = ({text, onClick, size='medium', color='primary'}) => {
+const ItemButton : React.FC<ItemButtonProps> = ({text, onClick, size='medium', color='primary', disable= false}) => {
     const getClassName = () => {
       switch (size) {
           case 'big':
@@ -39,7 +40,7 @@ const ItemButton : React.FC<ItemButtonProps> = ({text, onClick, size='medium', c
 
     return (
         <div className={className}>
-            <button onClick={() => onClick()} color={color ? color : 'primary'}>{text}</button>
+            <button onClick={() => onClick()} color={color ? color : 'primary'} disabled={disable}>{text}</button>
         </div>
     )
 }

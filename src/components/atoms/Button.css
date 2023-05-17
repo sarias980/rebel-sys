@@ -41,3 +41,9 @@
     background-color: #789bb0;
     color: white;
 }
+.item-button button:disabled,
+.item-button button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}

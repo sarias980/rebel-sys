@@ -24,4 +24,3 @@ export const updatePlanet = (planet: Planet) => ({
     type: UPDATE_PLANET,
     payload: planet,
 });
-
