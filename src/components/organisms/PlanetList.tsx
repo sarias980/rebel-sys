@@ -78,7 +78,7 @@ const PlanetList = () => {
     return (
         <section>
             <ListHeader title={'Planets'} setSearchTerm={handleChangeSearch} searchTerm={searchTerm}
-                        count={planets.length}
+                        count={planets?.length}
                         setShowModal={setShowModal}/>
             <SortByPlanets sort={sort} setSort={setSort}/>
             {render()}
