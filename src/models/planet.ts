@@ -2,22 +2,22 @@ import {generateUniqueId} from "../utils/idGenarator";
 
 export class Planet {
     constructor(
-        name: string,
-        climate: string,
-        diameter: string,
-        terrain: string,
-        population: string,
-        gravity: string,
-        orbital_period: string,
-        rotation_period: string,
-        surface_water: string,
-        url: string,
-        films: string[],
-        residents: string[],
-        created: Date,
-        edited: Date
+        name: string = '',
+        climate: string = '',
+        diameter: string = '',
+        terrain: string = '',
+        population: string = '',
+        gravity: string = '',
+        orbital_period: string = '',
+        rotation_period: string = '',
+        surface_water: string = '',
+        id?: string,
+        created?: string,
+        url?:string,
+        films?:string[],
+        residents?:string[]
     ) {
-        this.id = generateUniqueId()
+        this.id = id ? id : generateUniqueId()
         this.name = name;
         this.climate = climate;
         this.diameter = diameter;
@@ -27,11 +27,11 @@ export class Planet {
         this.orbital_period = orbital_period;
         this.rotation_period = rotation_period;
         this.surface_water = surface_water;
-        this.url = url;
-        this.films = films;
-        this.residents = residents;
-        this.created = created;
-        this.edited = edited;
+        this.url = url ? url : '';
+        this.films = films ? films : [];
+        this.residents = residents ? residents : [];
+        this.created = created ? created : new Date().toDateString();
+        this.edited = new Date();
     }
 
     public id:string;
@@ -47,7 +47,7 @@ export class Planet {
     public url: string;
     public films: string[];
     public residents: string[];
-    public created: Date;
+    public created: string;
     public edited: Date;
 
 

@@ -13,7 +13,7 @@ const DeleteModalConfirm: FC<ModalProps> = ({ message, confirm, cancel }) => {
             <div className="modal">
                 <div className="modal-message">{message}</div>
                 <div className="modal-buttons item-button">
-                    <button className="modal-confirm" onClick={confirm}>
+                    <button className="modal-confirm-danger" onClick={confirm}>
                         Confirm
                     </button>
                     <button className="modal-cancel" onClick={cancel}>

@@ -12,7 +12,7 @@ const SearchHeaderList: React.FC<SearchHeaderListProps> = ({searchTerm, setSearc
             <div className={'filter-header'}>
                 <input
                     type="text"
-                    placeholder="Search by name, climate, or terrain"
+                    placeholder="Search by name, climate or terrain"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />

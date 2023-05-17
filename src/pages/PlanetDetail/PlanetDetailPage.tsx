@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {Planet} from "../../models/planet";
 import PlanetHeader from "../../components/molecules/PlanetHeader";
-import PlanetInfo from "../../components/molecules/PlanetInfo";
+import PlanetInfo from "../../components/organisms/PlanetInfo";
 
 
 const PlanetsDetailPage: React.FC = () => {

@@ -8,3 +8,9 @@
     width: 95%;
     margin: auto;
 }
+
+.header-section .actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

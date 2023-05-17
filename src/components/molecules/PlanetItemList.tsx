@@ -16,7 +16,7 @@ const PlanetItemList = (props: { planet: Planet }) => {
     const planetImg = PlanetImg;
     const [showModal, setShowModal] = useState(false);
 
-    const navToProductsAds = () => {
+    const navToPlanet = () => {
         if (planet) {
             navigate(`/planet/${encodeURIComponent(planet.id)}`);
         }
@@ -32,20 +32,14 @@ const PlanetItemList = (props: { planet: Planet }) => {
         setShowModal(false);
     };
 
-    const handleUpdate = (planet: Planet) => {
-        if (planet) {
-
-        }
-    };
-
-    const handleDelete = (planet: Planet) => {
+    const handleDelete = () => {
         setShowModal(true);
     };
 
     return (
         <div className={'item-card item-container'}>
             <img src={planetImg} alt={planet.name}/>
-            <div className="card-info" onClick={() => navToProductsAds()}>
+            <div className="card-info" onClick={() => navToPlanet()}>
                 <h3>{planet.name}</h3>
                 <div className="card-info-detail">
                     <p><strong>Diameter:</strong> <span>{planet.diameter}</span> km</p>
@@ -56,7 +50,7 @@ const PlanetItemList = (props: { planet: Planet }) => {
                 </div>
             </div>
             <div className="card-buttons">
-                <ItemButton text={'✖'} onClick={() => handleDelete(planet)} size={"small"}
+                <ItemButton text={'✖'} onClick={() => handleDelete()} size={"small"}
                             color={"danger"}/>
             </div>
             {showModal && (
